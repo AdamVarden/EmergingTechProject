@@ -1,4 +1,5 @@
-FROM python:3
+# Uses python 3.8 because 3.9 with tensorflow causes errors
+FROM python:3.8
 
 WORKDIR /usr/src/app
 
