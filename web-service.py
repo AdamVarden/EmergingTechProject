@@ -3,7 +3,7 @@
 import flask as fl
 # numpy for numerical work.
 import numpy as np
-import numpy as np
+# Tensorflow for keras
 import tensorflow as tf
 from tensorflow import keras
 
@@ -14,5 +14,5 @@ app = fl.Flask(__name__)
 @app.route("/")
 def home():
   
-  data_model = keras.models.load_model("model")
+  data_model = keras.models.load_model("model.h5")
   return app.send_static_file('index.html')
