@@ -1,0 +1,28 @@
+<!-- Code adapted from - https://github.com/nanoproductions/flask_calculator_basic/blob/master/templates/app.html -->
+<html>
+    <div class="container">
+      <h3>Emerging Tech Project</h3>
+    </div>
+
+    <!-- Form -->
+    <div class="container">
+      <form action="/send" method="POST">
+        <label for="Power">Power</label>
+        <input
+          type="text"
+          placeholder="Power Value"
+          class="u-full-width"
+          name="prediction"
+        />
+
+        <input type="submit" value="Predict" id="calc_btn" />
+        <br/>
+
+      </form>
+      <div class="alert">
+
+        {{predict_data}}
+
+      </div>
+    </div>
+</html>
