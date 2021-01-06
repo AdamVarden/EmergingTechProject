@@ -1,10 +1,13 @@
 # Uses python 3.8 because 3.9 with tensorflow causes errors
 FROM python:3.8
 
+# Setting up a work directory
 WORKDIR /usr/src/app
 
+# Copying the requirements text file 
 COPY requirements.txt ./
 
+# Installing the necessary packages for the code
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
