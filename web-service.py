@@ -1,4 +1,8 @@
+# References
 # https://www.tensorflow.org/guide/keras/save_and_serialize - loading the model
+
+# https://www.youtube.com/watch?v=1k3cNPWVpcY&t=994s&ab_channel=CodingFuture - Sending data between the html file and the web service
+# https://web.microsoftstream.com/video/05d8b607-56c3-44a8-9539-c940257e43d8 - learning to use flask
 
 # flask for web app.
 from flask import Flask ,request, render_template
@@ -9,13 +13,14 @@ import numpy as np
 import tensorflow as tf
 from tensorflow import keras
 
+
 # Create a new web app.
 app = Flask(__name__)
 
 # Add root route.
 @app.route("/")
 def home():
-    
+  # Using templates made it easier to return data rather than static
   return render_template('index.html')
 
 # Making a route to get the input from form in index.html
@@ -25,16 +30,9 @@ def send():
   
   # To verify the request is a post
   if request.method == 'POST':
-    
-    dataset = pd.read_csv("https://raw.githubusercontent.com/ianmcloughlin/2020A-machstat-project/master/dataset/powerproduction.csv")
-    
-    # Adding the prediction input from index.html
+
+    #Adding prediction to an array
     prediction = np.array(float(request.form.get('prediction')))
-    
-    dataset_features = dataset.copy()
-    dataset_features = np.array(dataset_features)
-    dataset_power = dataset_features.pop('power')
-    dataset_power = np.array(dataset_power)
     
     # Loading the saved model
     data_model = keras.models.load_model("model.h5")

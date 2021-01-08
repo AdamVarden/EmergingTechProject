@@ -1,4 +1,4 @@
-# Uses python 3.8 because 3.9 with tensorflow causes errors
+# Uses python 3.8 because 3.9 doesn't work with tensorflow
 FROM python:3.8
 
 # Setting up a work directory
