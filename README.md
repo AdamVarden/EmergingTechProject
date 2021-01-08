@@ -25,7 +25,8 @@ I used this video and this repo to learn how to use docker
 > Repo: https://github.com/ianmcloughlin/random-app
 
 ### The model.h5 file
-This file is created from the the jupyter notebook and is used to load the trained data model into the web-service.
+This file is created from the the jupyter notebook and is used to load the trained data model into the web-service. The purpose of the .h5 file is to store store the weights and model configuration in a file
+>https://stackoverflow.com/questions/48320588/what-is-h5-model-in-keras
 
 ### Errors
 When the web service loads an internal server error appears that is due to 
